@@ -42,8 +42,8 @@
         <div class="hero-inner">
             <div class="hero-text">
                 <h1>PuRlO</h1>
-                <p class="tagline">A chill quest for 8 plants</p>
-                <p class="hero-desc">You're a brave little duck. A stoner NPC lost his stash of plants across three dangerous worlds. Collect them all, fight off enemies with nothing but a dash, and bring them home.</p>
+                <p class="tagline">A chill quest for 8 plants — times 3</p>
+                <p class="hero-desc">You're a brave little duck. A stoner NPC lost his stash of 24 plants across three dangerous worlds. Dash through enemies, phase through walls in fog form, and collect them all. No weapons — just a dash, a hop, and your reflexes.</p>
                 <div class="hero-buttons">
                     <a href="#about" class="btn btn-primary">Learn More</a>
                     <a href="#download" class="btn btn-secondary">Get the Game</a>
@@ -63,17 +63,17 @@
                 <div class="about-card fade-in">
                     <img src="assets/tiles/tileset.png" alt="Grasslands" class="about-img">
                     <h3>Explore</h3>
-                    <p>Three unique biomes with procedurally generated tilemaps. Grasslands, deserts, and dark caves — each with their own look and music.</p>
+                    <p>Three procedurally generated 2000x2000 worlds — grasslands, desert, and dark caves. Each biome has its own tileset, music track, and enemy roster. No two runs feel the same.</p>
                 </div>
                 <div class="about-card fade-in">
                     <img src="assets/sprites/Duck/Sprites/Jumping/Jumping 001.png" alt="Jump" class="about-img about-img-small">
                     <h3>Survive</h3>
-                    <p>No weapons. No sword, no gun. Just your legs, a jump, and a dash. Time it right or get wrecked.</p>
+                    <p>No weapons — just a dash, a hop, and your reflexes. Sprint through enemies, phase through walls in fog form, or time your dash for a 900-unit-per-second strike. Every enemy has unique AI.</p>
                 </div>
                 <div class="about-card fade-in">
                     <img src="assets/tiles/mushroom_purple.png" alt="Collect" class="about-img about-img-small">
                     <h3>Collect</h3>
-                    <p>8 hidden plants per world. Find them all, bring them back to the stoner, and unlock the path forward.</p>
+                    <p>8 plants hidden across each world. A golden arrow guides you to the nearest one. Bring them all back to the Stoner and he'll comp you with a fog form to reach the next level.</p>
                 </div>
             </div>
         </div>
@@ -106,27 +106,27 @@
     <section id="enemies" class="section">
         <div class="container">
             <h2 class="section-title">Enemies</h2>
-            <p class="section-subtitle">The skeletons stole the plants. They're not giving them back easy.</p>
+            <p class="section-subtitle">Four enemy types with distinct AI. They flank, aggro nearby allies, and never stop hunting.</p>
             <div class="enemy-row">
                 <div class="enemy-item fade-in">
                     <img src="assets/sprites/skeleton/skeleton_sheet.png" alt="Skeleton">
                     <h3>Skeleton</h3>
-                    <p>Patrols the ground. Chases you on sight. 1 hit to kill.</p>
+                    <p>Melee pursuer. Chases at 135 u/s within 380px, flanks from the side, retreats after hitting. 1 dash to kill.</p>
                 </div>
                 <div class="enemy-item fade-in">
                     <img src="assets/sprites/bat/bat_sheet.png" alt="Bat">
                     <h3>Bat</h3>
-                    <p>Flying. Ignores walls. Drops from above. 1 hit to kill.</p>
+                    <p>Flying. Ignores walls, water, and terrain entirely. Moves at 182 u/s — the fastest enemy. Cave biome only.</p>
                 </div>
                 <div class="enemy-item fade-in">
                     <img src="assets/sprites/slime/slime.png" alt="Slime">
                     <h3>Slime</h3>
-                    <p>Bounces around caves. Slow but annoying. 1 hit to kill.</p>
+                    <p>Stationary ranged attacker. Spits slime balls at 260 u/s from 480px away. 8 HP — the tankiest enemy in the game.</p>
                 </div>
                 <div class="enemy-item fade-in">
                     <img src="assets/sprites/skeleton/skeleton_sheet.png" alt="Brute">
                     <h3>Brute</h3>
-                    <p>Big. Tough. Takes 3 hits. Never gives up.</p>
+                    <p>3 HP. Slightly slower but always drops a Heart on death. Starts appearing in World 2 and never lets up.</p>
                 </div>
             </div>
         </div>
@@ -136,14 +136,16 @@
     <section class="section section-tight">
         <div class="container">
             <div class="feature-strip">
-                <div class="feature-chip">Jump & Dash</div>
-                <div class="feature-chip">3 Biomes</div>
-                <div class="feature-chip">Power-Ups</div>
-                <div class="feature-chip">NPC Dialogues</div>
+                <div class="feature-chip">Dash Combat</div>
+                <div class="feature-chip">3 Procedural Worlds</div>
+                <div class="feature-chip">4 Power-Ups</div>
+                <div class="feature-chip">NPC Dialogue System</div>
                 <div class="feature-chip">8 Plants Per Level</div>
-                <div class="feature-chip">Health System</div>
-                <div class="feature-chip">Procedural Maps</div>
-                <div class="feature-chip">Level Progression</div>
+                <div class="feature-chip">Fog Form</div>
+                <div class="feature-chip">Camera Shake</div>
+                <div class="feature-chip">Persistent Settings</div>
+                <div class="feature-chip">Letterboxing</div>
+                <div class="feature-chip">Resolution Scaling</div>
             </div>
         </div>
     </section>
@@ -172,30 +174,42 @@
     <!-- DEVELOPER -->
     <section id="dev" class="section section-dark">
         <div class="container">
-            <h2 class="section-title section-title-light">About the Developer</h2>
+            <h2 class="section-title section-title-light">Under the Hood</h2>
             <div class="dev-layout">
                 <div class="dev-text">
-                    <p>PuRlO started as a side project — a way to combine programming with pixel art and build something people could actually play.</p>
-                    <p>It's written in C++ with SFML. No game engine, no shortcuts — just raw C++ and SFML handling graphics, input, and audio directly.</p>
-                    <p>The game grew feature by feature: player movement, enemies, tilemaps, the NPC system, power-ups. Each layer built on the last over several months of iteration.</p>
-                    <p>It's not polished to AAA standards, but it's a complete game with real mechanics behind it.</p>
+                    <p>PuRlO is built from scratch in C++17 with SFML 2.6 — no game engine. Every system is hand-written: procedural tilemap generation, steering-based enemy AI with orbital flanking, a camera system with smooth follow and dual-sine screen shake, and a full dialogue engine with typewriter text.</p>
+                    <p>The worlds are generated using seeded RNG with cluster-based terrain placement, random-walk path carving, and flood-fill reachability checks to guarantee every collectible is accessible. Enemy placement uses a separate RNG pass to avoid locking to the tilemap seed.</p>
+                    <p>Collision uses iterative least-penetration resolution with per-axis sliding. Enemies separate to avoid stacking, unwedge from terrain after knockback, and maintain line-of-sight checks before melee attacks.</p>
+                    <p>Settings persist across sessions. The game letterboxes to 16:9 at any resolution from 720p to 1440p, with fullscreen and windowed modes.</p>
                 </div>
                 <div class="dev-sidebar">
                     <div class="dev-detail">
-                        <h4>Built With</h4>
-                        <p>C++17, SFML 2.6, CMake</p>
+                        <h4>Language</h4>
+                        <p>C++17</p>
+                    </div>
+                    <div class="dev-detail">
+                        <h4>Framework</h4>
+                        <p>SFML 2.6 (Graphics, Audio, Window)</p>
+                    </div>
+                    <div class="dev-detail">
+                        <h4>Build</h4>
+                        <p>CMake</p>
                     </div>
                     <div class="dev-detail">
                         <h4>Resolution</h4>
-                        <p>1280x720 at 60 FPS</p>
+                        <p>1280x720 @ 60 FPS (scales to 1440p)</p>
                     </div>
                     <div class="dev-detail">
-                        <h4>Sprites</h4>
-                        <p>Kenney asset packs (CC0)</p>
+                        <h4>World Size</h4>
+                        <p>2000x2000 px (125x125 tiles)</p>
                     </div>
                     <div class="dev-detail">
-                        <h4>Platform</h4>
-                        <p>Windows / Linux (build from source)</p>
+                        <h4>Source</h4>
+                        <p>32 files, ~5800 lines</p>
+                    </div>
+                    <div class="dev-detail">
+                        <h4>Assets</h4>
+                        <p>Kenney packs (CC0)</p>
                     </div>
                 </div>
             </div>
@@ -229,28 +243,36 @@
             <h2 class="section-title">Frequently Asked Questions</h2>
             <div class="faq-list">
                 <details class="faq-item">
-                    <summary>How do I play?</summary>
-                    <p>WASD to move, Space to jump, K to dash into enemies, Shift to sprint, E to talk to NPCs. Collect all 8 plants and return them to the stoner.</p>
+                    <summary>What are the controls?</summary>
+                    <p>WASD — Move. Space — Hop (crosses water). Shift — Sprint. K or Left Ctrl — Dash (your attack). E — Talk/Interact. I — Inventory. Escape — Close menu. R — Restart on death.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>What are the controls?</summary>
-                    <p>WASD — Move. Space — Jump. K — Dash (your only attack). Shift — Sprint. E — Interact/Talk. R — Restart after death.</p>
+                    <summary>How does the dash work?</summary>
+                    <p>Dash sends you at 900 units/sec for 0.2 seconds with a 0.6s cooldown. While dashing you're invulnerable and deal damage to enemies on contact. Each enemy can only be hit once per dash — hitting one triggers knockback and aggros nearby enemies within 260px.</p>
                 </details>
                 <details class="faq-item">
                     <summary>How many levels are there?</summary>
-                    <p>3 worlds: Grasslands, Desert, and Cave. Each has 8 plants to collect. Clear all three to win.</p>
+                    <p>3 worlds: Grassy (6 skeletons), Desert (8 skeletons + 3 brutes), and Cave (10 skeletons, 4 brutes, 5 bats, 2 slimes). Each is 2000x2000 pixels, procedurally generated with seeded RNG. 8 plants per world.</p>
                 </details>
                 <details class="faq-item">
                     <summary>What do power-ups do?</summary>
-                    <p>Speed Boost makes you faster. Ghost Shield makes you invincible for a few seconds. Extra Hearts increase your max health.</p>
+                    <p>Power-ups drop from enemies and go into your inventory (press I). Speed Potion: 1.35x move speed for 6 seconds. Ghost Shield: full invulnerability for 4 seconds. Heart: +1 max HP (capped at 10). Weed: Fog Form — phase through all terrain at 420 u/s for 8 seconds.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>What is Fog Form?</summary>
+                    <p>A translucent mist state. You move at 420 u/s, pass through all walls and water, and can't take damage. You can't dash or hop while in fog. The Stoner gives it to you when you clear a level, and the rare Weed drop (12% chance) triggers it independently.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Does the game pause when I open inventory?</summary>
+                    <p>No. The inventory is an overlay — enemies keep moving and timers keep ticking while you browse your power-ups. Manage your items carefully mid-combat.</p>
                 </details>
                 <details class="faq-item">
                     <summary>Is it free?</summary>
-                    <p>Yes. PuRlO is free and open source. You'll need a C++ compiler and SFML 2.6 to build it.</p>
+                    <p>Yes. PuRlO is free and open source. Download the Windows build or compile from source with CMake and SFML 2.6.</p>
                 </details>
                 <details class="faq-item">
                     <summary>How was this made?</summary>
-                    <p>C++17 with SFML 2.6 for rendering, input, and audio. CMake for builds. No game engine — everything is hand-rolled from scratch.</p>
+                    <p>C++17 with SFML 2.6 for rendering, input, and audio. CMake for builds. No game engine — procedural generation, enemy AI, camera systems, dialogue engine, and collision resolution are all custom.</p>
                 </details>
             </div>
         </div>
