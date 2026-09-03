@@ -491,8 +491,7 @@ a:hover {
 }
 
 .about-card,
-.enemy-item,
-.press-card {
+.enemy-item {
     background:
         linear-gradient(
             145deg,
@@ -517,8 +516,7 @@ a:hover {
 }
 
 .about-card:hover,
-.enemy-item:hover,
-.press-card:hover {
+.enemy-item:hover {
     transform: translateY(-7px);
 
     border-color: rgba(155,229,100,.45);
@@ -704,55 +702,6 @@ a:hover {
     transform: translateY(-2px);
 
     box-shadow: 0 5px 20px rgba(155,229,100,.15);
-}
-
-/* =========================================================
-   PRESS
-   ========================================================= */
-
-.press-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.press-card {
-    position: relative;
-}
-
-.press-card::before {
-    content: "“";
-
-    position: absolute;
-
-    top: 8px;
-    left: 18px;
-
-    color: var(--purple-bright);
-
-    font-size: 60px;
-
-    opacity: .35;
-}
-
-.press-quote {
-    position: relative;
-
-    color: #d6e4d0;
-
-    font-size: 15px;
-    font-style: italic;
-
-    padding-top: 25px;
-
-    margin-bottom: 16px;
-}
-
-.press-source {
-    color: var(--lime);
-
-    font-size: 12px;
-    font-weight: 700;
 }
 
 /* =========================================================
@@ -1200,8 +1149,7 @@ a:hover {
         height: 160px;
     }
 
-    .about-grid,
-    .press-grid {
+    .about-grid {
         grid-template-columns: 1fr;
     }
 

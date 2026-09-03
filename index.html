@@ -3,345 +3,1324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PuRlO — A Chill Quest for 8 Plants</title>
-    <meta name="description" content="PuRlO is a free indie platformer where you play as a brave little duck collecting plants across three dangerous worlds. Built with C++ and SFML.">
-    <meta name="theme-color" content="#2e7d32">
-    <link rel="icon" href="assets/sprites/Duck/Sprites/Idle/Idle 001.png" type="image/png">
-    <meta property="og:title" content="PuRlO — A Chill Quest for 8 Plants">
-    <meta property="og:description" content="A free indie platformer. You're a duck. Collect 8 plants. Fight skeletons. No weapons, just vibes.">
-    <meta property="og:image" content="assets/sprites/Duck/Sprites/Idle/Idle 001.png">
+
+    <title>PuRlO — A Chill Quest for 24 Plants</title>
+
+    <meta
+        name="description"
+        content="PuRlO is a weird, chill indie platformer about a brave little duck, 24 plants, dangerous worlds, skeletons, and becoming fog."
+    >
+
+    <meta name="theme-color" content="#07140b">
+
+    <link
+        rel="icon"
+        href="assets/sprites/Duck/Sprites/Idle/Idle 001.png"
+        type="image/png"
+    >
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="PuRlO — A Chill Quest for 24 Plants">
+    <meta
+        property="og:description"
+        content="One duck. 24 plants. Three strange worlds. No weapons. Just vibes."
+    >
+    <meta
+        property="og:image"
+        content="assets/sprites/Duck/Sprites/Idle/Idle 001.png"
+    >
     <meta property="og:type" content="website">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <nav class="nav" id="nav">
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+
+    <nav class="nav" id="nav" aria-label="Main navigation">
+
         <div class="nav-inner">
-            <a href="#" class="nav-logo">
-                <img src="assets/sprites/Duck/Sprites/Idle/Idle 001.png" alt="" class="nav-logo-img">
-                PuRlO
+
+            <a href="#" class="nav-logo" aria-label="PuRlO home">
+
+                <img
+                    src="assets/sprites/Duck/Sprites/Idle/Idle 001.png"
+                    alt=""
+                    class="nav-logo-img"
+                >
+
+                <span>PuRlO</span>
+
             </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span><span></span><span></span>
+
+            <button
+                class="nav-toggle"
+                id="navToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navLinks"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
+
             <div class="nav-links" id="navLinks">
-                <a href="#about">About</a>
-                <a href="#screenshots">Screenshots</a>
+
+                <a href="#about">The Game</a>
+                <a href="#screenshots">Worlds</a>
                 <a href="#enemies">Enemies</a>
-                <a href="#dev">Developer</a>
+                <a href="#dev">Under the Hood</a>
                 <a href="#faq">FAQ</a>
+
+                <a href="#download" class="nav-download">
+                    Get PuRlO
+                </a>
+
             </div>
+
         </div>
+
     </nav>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-inner">
-            <div class="hero-text">
-                <h1>PuRlO</h1>
-                <p class="tagline">A chill quest for 8 plants — times 3</p>
-                <p class="hero-desc">You're a brave little duck. A stoner NPC lost his stash of 24 plants across three dangerous worlds. Dash through enemies, phase through walls in fog form, and collect them all. No weapons — just a dash, a hop, and your reflexes.</p>
-                <div class="hero-buttons">
-                    <a href="#about" class="btn btn-primary">Learn More</a>
-                    <a href="#download" class="btn btn-secondary">Get the Game</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <img src="assets/sprites/Duck/Sprites/Idle/Idle 001.png" alt="Purlo the duck" class="hero-duck">
-            </div>
-        </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">What is PuRlO?</h2>
-            <div class="about-grid">
-                <div class="about-card fade-in">
-                    <img src="assets/tiles/tileset.png" alt="Grasslands" class="about-img">
-                    <h3>Explore</h3>
-                    <p>Three procedurally generated 2000x2000 worlds — grasslands, desert, and dark caves. Each biome has its own tileset, music track, and enemy roster. No two runs feel the same.</p>
-                </div>
-                <div class="about-card fade-in">
-                    <img src="assets/sprites/Duck/Sprites/Jumping/Jumping 001.png" alt="Jump" class="about-img about-img-small">
-                    <h3>Survive</h3>
-                    <p>No weapons — just a dash, a hop, and your reflexes. Sprint through enemies, phase through walls in fog form, or time your dash for a 900-unit-per-second strike. Every enemy has unique AI.</p>
-                </div>
-                <div class="about-card fade-in">
-                    <img src="assets/tiles/mushroom_purple.png" alt="Collect" class="about-img about-img-small">
-                    <h3>Collect</h3>
-                    <p>8 plants hidden across each world. A golden arrow guides you to the nearest one. Bring them all back to the Stoner and he'll comp you with a fog form to reach the next level.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
 
-    <!-- SCREENSHOTS -->
-    <section id="screenshots" class="section section-dark">
-        <div class="container">
-            <h2 class="section-title section-title-light">Screenshots</h2>
-            <div class="screenshot-showcase">
-                <div class="screenshot-main fade-in">
-                    <img src="assets/tiles/tileset.png" alt="Grasslands">
-                    <span>Grasslands</span>
-                </div>
-                <div class="screenshot-side">
-                    <div class="screenshot-thumb fade-in">
-                        <img src="assets/tiles/desert_tileset.png" alt="Desert">
-                        <span>Desert</span>
-                    </div>
-                    <div class="screenshot-thumb fade-in">
-                        <img src="assets/tiles/cave_tileset.png" alt="Cave">
-                        <span>Cave</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <main>
 
-    <!-- ENEMIES -->
-    <section id="enemies" class="section">
-        <div class="container">
-            <h2 class="section-title">Enemies</h2>
-            <p class="section-subtitle">Four enemy types with distinct AI. They flank, aggro nearby allies, and never stop hunting.</p>
-            <div class="enemy-row">
-                <div class="enemy-item fade-in">
-                    <img src="assets/sprites/skeleton/skeleton_sheet.png" alt="Skeleton">
-                    <h3>Skeleton</h3>
-                    <p>Melee pursuer. Chases at 135 u/s within 380px, flanks from the side, retreats after hitting. 1 dash to kill.</p>
-                </div>
-                <div class="enemy-item fade-in">
-                    <img src="assets/sprites/bat/bat_sheet.png" alt="Bat">
-                    <h3>Bat</h3>
-                    <p>Flying. Ignores walls, water, and terrain entirely. Moves at 182 u/s — the fastest enemy. Cave biome only.</p>
-                </div>
-                <div class="enemy-item fade-in">
-                    <img src="assets/sprites/slime/slime.png" alt="Slime">
-                    <h3>Slime</h3>
-                    <p>Stationary ranged attacker. Spits slime balls at 260 u/s from 480px away. 8 HP — the tankiest enemy in the game.</p>
-                </div>
-                <div class="enemy-item fade-in">
-                    <img src="assets/sprites/skeleton/skeleton_sheet.png" alt="Brute">
-                    <h3>Brute</h3>
-                    <p>3 HP. Slightly slower but always drops a Heart on death. Starts appearing in World 2 and never lets up.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section class="hero" aria-labelledby="hero-title">
 
-    <!-- FEATURES -->
-    <section class="section section-tight">
-        <div class="container">
-            <div class="feature-strip">
-                <div class="feature-chip">Dash Combat</div>
-                <div class="feature-chip">3 Procedural Worlds</div>
-                <div class="feature-chip">4 Power-Ups</div>
-                <div class="feature-chip">NPC Dialogue System</div>
-                <div class="feature-chip">8 Plants Per Level</div>
-                <div class="feature-chip">Fog Form</div>
-                <div class="feature-chip">Camera Shake</div>
-                <div class="feature-chip">Persistent Settings</div>
-                <div class="feature-chip">Letterboxing</div>
-                <div class="feature-chip">Resolution Scaling</div>
-            </div>
-        </div>
-    </section>
+            <div class="hero-inner">
 
-    <!-- PRESS -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">What People Are Saying</h2>
-            <div class="press-grid">
-                <div class="press-card fade-in">
-                    <p class="press-quote">"This game hits different at 2 AM with headphones on. The vibe is immaculate."</p>
-                    <span class="press-source">— r/indiegaming</span>
-                </div>
-                <div class="press-card fade-in">
-                    <p class="press-quote">"The stoner NPC alone is worth the download. 'You got hands, a dash, and a hop.' Legend."</p>
-                    <span class="press-source">— Steam Review</span>
-                </div>
-                <div class="press-card fade-in">
-                    <p class="press-quote">"Proof you don't need a big engine or a big team. Just vibes, a duck, and some plants."</p>
-                    <span class="press-source">— Indie Dev Gazette</span>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="hero-text">
 
-    <!-- DEVELOPER -->
-    <section id="dev" class="section section-dark">
-        <div class="container">
-            <h2 class="section-title section-title-light">Under the Hood</h2>
-            <div class="dev-layout">
-                <div class="dev-text">
-                    <p>PuRlO is built from scratch in C++17 with SFML 2.6 — no game engine. Every system is hand-written: procedural tilemap generation, steering-based enemy AI with orbital flanking, a camera system with smooth follow and dual-sine screen shake, and a full dialogue engine with typewriter text.</p>
-                    <p>The worlds are generated using seeded RNG with cluster-based terrain placement, random-walk path carving, and flood-fill reachability checks to guarantee every collectible is accessible. Enemy placement uses a separate RNG pass to avoid locking to the tilemap seed.</p>
-                    <p>Collision uses iterative least-penetration resolution with per-axis sliding. Enemies separate to avoid stacking, unwedge from terrain after knockback, and maintain line-of-sight checks before melee attacks.</p>
-                    <p>Settings persist across sessions. The game letterboxes to 16:9 at any resolution from 720p to 1440p, with fullscreen and windowed modes.</p>
-                </div>
-                <div class="dev-sidebar">
-                    <div class="dev-detail">
-                        <h4>Language</h4>
-                        <p>C++17</p>
+                    <div class="hero-kicker">
+                        FREE INDIE PLATFORMER
                     </div>
-                    <div class="dev-detail">
-                        <h4>Framework</h4>
-                        <p>SFML 2.6 (Graphics, Audio, Window)</p>
-                    </div>
-                    <div class="dev-detail">
-                        <h4>Build</h4>
-                        <p>CMake</p>
-                    </div>
-                    <div class="dev-detail">
-                        <h4>Resolution</h4>
-                        <p>1280x720 @ 60 FPS (scales to 1440p)</p>
-                    </div>
-                    <div class="dev-detail">
-                        <h4>World Size</h4>
-                        <p>2000x2000 px (125x125 tiles)</p>
-                    </div>
-                    <div class="dev-detail">
-                        <h4>Source</h4>
-                        <p>32 files, ~5800 lines</p>
-                    </div>
-                    <div class="dev-detail">
-                        <h4>Assets</h4>
-                        <p>Kenney packs (CC0)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- DOWNLOAD -->
-    <section id="download" class="section">
-        <div class="container">
-            <div class="download-block">
-                <img src="assets/sprites/Duck/Sprites/Idle/Idle 001.png" alt="Purlo" class="download-duck">
-                <h2>Get PuRlO</h2>
-                <p>Free and open source. Download the game or build from source.</p>
-                <div class="store-buttons">
-                    <a href="assets/Purlo.zip" class="store-btn store-btn-download" download>
-                        <span class="store-label">Download for Windows</span>
-                        <span class="store-platform">Purlo.zip</span>
+                    <h1 id="hero-title">
+                        PuRlO
+                    </h1>
+
+                    <p class="tagline">
+                        One duck. 24 plants. Zero weapons.
+                    </p>
+
+                    <p class="hero-desc">
+                        A weird little platformer about a brave duck,
+                        a questionable stash, and three worlds full of
+                        things that absolutely do not want you collecting it.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#download"
+                            class="btn btn-primary"
+                        >
+                            🌿 Get the Game
+                        </a>
+
+                        <a
+                            href="#about"
+                            class="btn btn-secondary"
+                        >
+                            Meet PuRlO
+                        </a>
+
+                    </div>
+
+                    <div class="hero-stats">
+
+                        <div class="hero-stat">
+                            <strong>24</strong>
+                            <span>Plants</span>
+                        </div>
+
+                        <div class="hero-stat">
+                            <strong>3</strong>
+                            <span>Worlds</span>
+                        </div>
+
+                        <div class="hero-stat">
+                            <strong>4</strong>
+                            <span>Enemies</span>
+                        </div>
+
+                        <div class="hero-stat">
+                            <strong>0</strong>
+                            <span>Guns</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="hero-aura"></div>
+
+                    <div class="hero-plant plant-one">
+                        🌿
+                    </div>
+
+                    <div class="hero-plant plant-two">
+                        🍄
+                    </div>
+
+                    <img
+                        src="assets/sprites/Duck/Sprites/Idle/Idle 001.png"
+                        alt="PuRlO, the game's brave little duck"
+                        class="hero-duck"
+                    >
+
+                    <div class="hero-caption">
+                        <span>★</span>
+                        stay chill
+                        <span>★</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             INTRO / VIBE
+             ================================================= -->
+
+        <section class="section vibe-section" id="about">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-eyebrow">
+                        WHAT IS THIS?
+                    </span>
+
+                    <h2 class="section-title">
+                        The duck has a job.
+                    </h2>
+
+                    <p class="section-subtitle">
+                        It's not a very complicated job.
+                    </p>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <article class="about-card fade-in">
+
+                        <div class="card-icon">
+                            🌿
+                        </div>
+
+                        <h3>
+                            Find the stash
+                        </h3>
+
+                        <p>
+                            24 plants are scattered across three
+                            dangerous worlds. Eight per world.
+                            A golden arrow points you toward the
+                            nearest one when you get lost.
+                        </p>
+
+                    </article>
+
+
+                    <article class="about-card fade-in">
+
+                        <div class="card-icon">
+                            💨
+                        </div>
+
+                        <h3>
+                            Become fog
+                        </h3>
+
+                        <p>
+                            Collect the right power-up and become
+                            a translucent cloud of absolutely
+                            questionable decision-making. Walls?
+                            Water? Who cares.
+                        </p>
+
+                    </article>
+
+
+                    <article class="about-card fade-in">
+
+                        <div class="card-icon">
+                            🦆
+                        </div>
+
+                        <h3>
+                            Be a duck
+                        </h3>
+
+                        <p>
+                            You have a hop, a sprint, and a dash
+                            that launches you at 900 units per second.
+                            No sword. No gun. Just duck.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             VIBE STRIP
+             ================================================= -->
+
+        <section class="section section-tight vibe-strip-section">
+
+            <div class="container">
+
+                <div class="vibe-strip">
+
+                    <span>🌿 Plants</span>
+                    <span>✦</span>
+                    <span>🦆 Ducks</span>
+                    <span>✦</span>
+                    <span>💨 Fog</span>
+                    <span>✦</span>
+                    <span>💀 Skeletons</span>
+                    <span>✦</span>
+                    <span>🍄 Weird stuff</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             WORLDS / SCREENSHOTS
+             ================================================= -->
+
+        <section
+            id="screenshots"
+            class="section section-dark"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-eyebrow">
+                        TAKE A LITTLE TRIP
+                    </span>
+
+                    <h2 class="section-title section-title-light">
+                        Three worlds. One stash.
+                    </h2>
+
+                    <p class="section-subtitle">
+                        Procedurally generated worlds with their own
+                        terrain, music, enemies, and general nonsense.
+                    </p>
+
+                </div>
+
+
+                <div class="screenshot-showcase">
+
+                    <div class="screenshot-main fade-in">
+
+                        <img
+                            src="assets/tiles/tileset.png"
+                            alt="Grasslands world"
+                            loading="lazy"
+                        >
+
+                        <div class="screenshot-label">
+                            <strong>WORLD 01</strong>
+                            <span>Grasslands</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="screenshot-side">
+
+                        <div class="screenshot-thumb fade-in">
+
+                            <img
+                                src="assets/tiles/desert_tileset.png"
+                                alt="Desert world"
+                                loading="lazy"
+                            >
+
+                            <div class="screenshot-label">
+                                <strong>WORLD 02</strong>
+                                <span>Desert</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="screenshot-thumb fade-in">
+
+                            <img
+                                src="assets/tiles/cave_tileset.png"
+                                alt="Dark cave world"
+                                loading="lazy"
+                            >
+
+                            <div class="screenshot-label">
+                                <strong>WORLD 03</strong>
+                                <span>Cave</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             GAMEPLAY FEATURES
+             ================================================= -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-eyebrow">
+                        HOW TO SURVIVE
+                    </span>
+
+                    <h2 class="section-title">
+                        Hands. Dash. Hop.
+                    </h2>
+
+                    <p class="section-subtitle">
+                        The Stoner wasn't exactly generous with your
+                        equipment. You'll have to make it work.
+                    </p>
+
+                </div>
+
+
+                <div class="gameplay-grid">
+
+                    <div class="gameplay-card fade-in">
+
+                        <span class="gameplay-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Dash
+                        </h3>
+
+                        <p>
+                            Launch yourself at 900 u/s.
+                            You're invulnerable while dashing
+                            and enemies get absolutely bonked.
+                        </p>
+
+                    </div>
+
+
+                    <div class="gameplay-card fade-in">
+
+                        <span class="gameplay-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Hop
+                        </h3>
+
+                        <p>
+                            Cross water and escape situations
+                            that you probably shouldn't have
+                            gotten yourself into.
+                        </p>
+
+                    </div>
+
+
+                    <div class="gameplay-card fade-in">
+
+                        <span class="gameplay-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Fog
+                        </h3>
+
+                        <p>
+                            Become mist. Ignore walls.
+                            Ignore water. Ignore damage.
+                            Temporarily ignore reality.
+                        </p>
+
+                    </div>
+
+
+                    <div class="gameplay-card fade-in">
+
+                        <span class="gameplay-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Collect
+                        </h3>
+
+                        <p>
+                            Find eight plants in each world
+                            and bring them back to the Stoner
+                            before the skeletons ruin your afternoon.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ENEMIES
+             ================================================= -->
+
+        <section id="enemies" class="section section-dark">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-eyebrow">
+                        RUDE PEOPLE
+                    </span>
+
+                    <h2 class="section-title section-title-light">
+                        Things that want you dead.
+                    </h2>
+
+                    <p class="section-subtitle">
+                        Four enemy types. Different AI.
+                        Same general dislike of ducks.
+                    </p>
+
+                </div>
+
+
+                <div class="enemy-row">
+
+
+                    <article class="enemy-item fade-in">
+
+                        <div class="enemy-image">
+                            <img
+                                src="assets/sprites/skeleton/skeleton_sheet.png"
+                                alt="Skeleton enemy"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <span class="enemy-type">
+                            MELEE
+                        </span>
+
+                        <h3>
+                            Skeleton
+                        </h3>
+
+                        <p>
+                            A relentless melee pursuer that
+                            chases, flanks, attacks, and retreats.
+                            One dash will do the job.
+                        </p>
+
+                    </article>
+
+
+                    <article class="enemy-item fade-in">
+
+                        <div class="enemy-image">
+                            <img
+                                src="assets/sprites/bat/bat_sheet.png"
+                                alt="Bat enemy"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <span class="enemy-type">
+                            FLYING
+                        </span>
+
+                        <h3>
+                            Bat
+                        </h3>
+
+                        <p>
+                            Fast, annoying, and completely
+                            uninterested in your carefully
+                            constructed relationship with walls.
+                        </p>
+
+                    </article>
+
+
+                    <article class="enemy-item fade-in">
+
+                        <div class="enemy-image">
+                            <img
+                                src="assets/sprites/slime/slime.png"
+                                alt="Slime enemy"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <span class="enemy-type">
+                            RANGED
+                        </span>
+
+                        <h3>
+                            Slime
+                        </h3>
+
+                        <p>
+                            Sits there. Watches you.
+                            Throws slime balls at you.
+                            Honestly, kind of disrespectful.
+                        </p>
+
+                    </article>
+
+
+                    <article class="enemy-item fade-in">
+
+                        <div class="enemy-image">
+                            <img
+                                src="assets/sprites/skeleton/skeleton_sheet.png"
+                                alt="Brute enemy"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <span class="enemy-type">
+                            BRUTE
+                        </span>
+
+                        <h3>
+                            Brute
+                        </h3>
+
+                        <p>
+                            Tougher, slower, and somehow
+                            always standing exactly where
+                            you don't want him to be.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FEATURES
+             ================================================= -->
+
+        <section class="section section-tight">
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-eyebrow">
+                        WHAT'S IN THE BAG?
+                    </span>
+
+                    <h2 class="section-title">
+                        More weird stuff.
+                    </h2>
+
+                </div>
+
+
+                <div class="feature-strip">
+
+                    <span class="feature-chip">
+                        🌿 24 Plants
+                    </span>
+
+                    <span class="feature-chip">
+                        💨 Fog Form
+                    </span>
+
+                    <span class="feature-chip">
+                        ⚡ Dash Combat
+                    </span>
+
+                    <span class="feature-chip">
+                        🌎 3 Procedural Worlds
+                    </span>
+
+                    <span class="feature-chip">
+                        🍄 4 Power-Ups
+                    </span>
+
+                    <span class="feature-chip">
+                        💀 Enemy AI
+                    </span>
+
+                    <span class="feature-chip">
+                        💬 NPC Dialogue
+                    </span>
+
+                    <span class="feature-chip">
+                        🎥 Camera Shake
+                    </span>
+
+                    <span class="feature-chip">
+                        🎮 Controller-Friendly Design
+                    </span>
+
+                    <span class="feature-chip">
+                        ⚙️ Persistent Settings
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+             ================================================= -->
+
+        <section id="dev" class="section section-dark">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-eyebrow">
+                        UNDER THE HOOD
+                    </span>
+
+                    <h2 class="section-title section-title-light">
+                        Surprisingly serious code.
+                    </h2>
+
+                    <p class="section-subtitle">
+                        The game looks chill. The code underneath
+                        is considerably less chill.
+                    </p>
+
+                </div>
+
+
+                <div class="dev-layout">
+
+                    <div class="dev-text">
+
+                        <p>
+                            PuRlO is built from scratch in C++17
+                            with SFML 2.6. No game engine.
+                            Every major system is custom-built.
+                        </p>
+
+                        <p>
+                            Procedural tilemap generation,
+                            steering-based enemy AI with orbital
+                            flanking, smooth camera follow,
+                            dual-sine screen shake, and a full
+                            dialogue engine with typewriter text
+                            are all written specifically for the game.
+                        </p>
+
+                        <p>
+                            Worlds are generated using seeded RNG,
+                            cluster-based terrain placement,
+                            random-walk path carving, and flood-fill
+                            reachability checks to make sure every
+                            collectible can actually be reached.
+                        </p>
+
+                        <p>
+                            Collision uses iterative
+                            least-penetration resolution with
+                            per-axis sliding. Enemies separate to
+                            avoid stacking, recover after knockback,
+                            and perform line-of-sight checks before
+                            melee attacks.
+                        </p>
+
+                    </div>
+
+
+                    <aside class="dev-sidebar">
+
+                        <div class="dev-detail">
+                            <h4>Language</h4>
+                            <p>C++17</p>
+                        </div>
+
+                        <div class="dev-detail">
+                            <h4>Framework</h4>
+                            <p>SFML 2.6</p>
+                        </div>
+
+                        <div class="dev-detail">
+                            <h4>Build</h4>
+                            <p>CMake</p>
+                        </div>
+
+                        <div class="dev-detail">
+                            <h4>Resolution</h4>
+                            <p>1280×720 → 1440p</p>
+                        </div>
+
+                        <div class="dev-detail">
+                            <h4>World Size</h4>
+                            <p>2000×2000 px</p>
+                        </div>
+
+                        <div class="dev-detail">
+                            <h4>Source</h4>
+                            <p>~5,800 lines</p>
+                        </div>
+
+                        <div class="dev-detail">
+                            <h4>Assets</h4>
+                            <p>Kenney packs · CC0</p>
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DOWNLOAD
+             ================================================= -->
+
+        <section id="download" class="section">
+
+            <div class="container">
+
+                <div class="download-block">
+
+                    <div class="download-decoration">
+                        🌿　🍄　🌿　🍃　🌱
+                    </div>
+
+                    <img
+                        src="assets/sprites/Duck/Sprites/Idle/Idle 001.png"
+                        alt="PuRlO the duck"
+                        class="download-duck"
+                    >
+
+                    <span class="section-eyebrow">
+                        READY?
+                    </span>
+
+                    <h2>
+                        Go get the stash.
+                    </h2>
+
+                    <p>
+                        PuRlO is free and open source.
+                        Download the Windows build or grab
+                        the source and build it yourself.
+                    </p>
+
+
+                    <div class="store-buttons">
+
+                        <a
+                            href="assets/Purlo.zip"
+                            class="store-btn store-btn-download"
+                            download
+                        >
+
+                            <span class="store-label">
+                                DOWNLOAD
+                            </span>
+
+                            <span class="store-platform">
+                                Windows
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="https://github.com/NullSec8/purlo-website"
+                            class="store-btn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            <span class="store-label">
+                                SOURCE CODE
+                            </span>
+
+                            <span class="store-platform">
+                                GitHub
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <p class="download-note">
+                        Free forever · No launcher · No nonsense
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FAQ
+             ================================================= -->
+
+        <section id="faq" class="section section-tight">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-eyebrow">
+                        QUESTIONS?
+                    </span>
+
+                    <h2 class="section-title">
+                        Ask the duck.
+                    </h2>
+
+                </div>
+
+
+                <div class="faq-list">
+
+                    <details class="faq-item">
+
+                        <summary>
+                            What are the controls?
+                        </summary>
+
+                        <p>
+                            WASD — Move. Space — Hop.
+                            Shift — Sprint. K or Left Ctrl — Dash.
+                            E — Talk/Interact. I — Inventory.
+                            Escape — Close menu. R — Restart after death.
+                        </p>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            How does the dash work?
+                        </summary>
+
+                        <p>
+                            Dash sends you at 900 units/sec for
+                            0.2 seconds with a 0.6 second cooldown.
+                            You're invulnerable while dashing and
+                            deal damage to enemies on contact.
+                        </p>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            How many worlds are there?
+                        </summary>
+
+                        <p>
+                            Three: Grasslands, Desert, and Cave.
+                            Each world is 2000×2000 pixels and
+                            procedurally generated using seeded RNG.
+                            There are eight plants to collect in each.
+                        </p>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            What power-ups can I find?
+                        </summary>
+
+                        <p>
+                            Speed Potion gives you 1.35× move speed
+                            for six seconds. Ghost Shield gives
+                            full invulnerability for four seconds.
+                            Hearts increase your maximum HP.
+                            Weed triggers Fog Form.
+                        </p>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            What is Fog Form?
+                        </summary>
+
+                        <p>
+                            You become a translucent mist.
+                            You move at 420 u/s, pass through walls
+                            and water, and cannot take damage.
+                            You can't dash or hop while in fog.
+                        </p>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Does inventory pause the game?
+                        </summary>
+
+                        <p>
+                            Nope. The inventory is an overlay.
+                            Enemies keep moving and timers keep
+                            ticking while you decide what to use.
+                        </p>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Is PuRlO actually free?
+                        </summary>
+
+                        <p>
+                            Yes. PuRlO is free and open source.
+                            Download the Windows build or compile
+                            the project yourself using CMake and SFML 2.6.
+                        </p>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Was this made with a game engine?
+                        </summary>
+
+                        <p>
+                            Nope. PuRlO is built from scratch in C++17
+                            using SFML 2.6. Procedural generation,
+                            enemy AI, camera systems, dialogue,
+                            collision, and other core systems are custom.
+                        </p>
+
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SOCIAL
+             ================================================= -->
+
+        <section class="section section-tight">
+
+            <div class="container">
+
+                <div class="social-bar">
+
+                    <a
+                        href="https://github.com/NullSec8"
+                        class="social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub
                     </a>
-                    <a href="https://github.com/NullSec8/purlo-website" class="store-btn" target="_blank" rel="noopener">
-                        <span class="store-label">Source Code</span>
-                        <span class="store-platform">GitHub</span>
+
+                    <a
+                        href="https://twitter.com"
+                        class="social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Twitter / X
                     </a>
+
+                    <a
+                        href="https://discord.com"
+                        class="social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Discord
+                    </a>
+
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="section section-tight">
-        <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <div class="faq-list">
-                <details class="faq-item">
-                    <summary>What are the controls?</summary>
-                    <p>WASD — Move. Space — Hop (crosses water). Shift — Sprint. K or Left Ctrl — Dash (your attack). E — Talk/Interact. I — Inventory. Escape — Close menu. R — Restart on death.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>How does the dash work?</summary>
-                    <p>Dash sends you at 900 units/sec for 0.2 seconds with a 0.6s cooldown. While dashing you're invulnerable and deal damage to enemies on contact. Each enemy can only be hit once per dash — hitting one triggers knockback and aggros nearby enemies within 260px.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>How many levels are there?</summary>
-                    <p>3 worlds: Grassy (6 skeletons), Desert (8 skeletons + 3 brutes), and Cave (10 skeletons, 4 brutes, 5 bats, 2 slimes). Each is 2000x2000 pixels, procedurally generated with seeded RNG. 8 plants per world.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>What do power-ups do?</summary>
-                    <p>Power-ups drop from enemies and go into your inventory (press I). Speed Potion: 1.35x move speed for 6 seconds. Ghost Shield: full invulnerability for 4 seconds. Heart: +1 max HP (capped at 10). Weed: Fog Form — phase through all terrain at 420 u/s for 8 seconds.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>What is Fog Form?</summary>
-                    <p>A translucent mist state. You move at 420 u/s, pass through all walls and water, and can't take damage. You can't dash or hop while in fog. The Stoner gives it to you when you clear a level, and the rare Weed drop (12% chance) triggers it independently.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Does the game pause when I open inventory?</summary>
-                    <p>No. The inventory is an overlay — enemies keep moving and timers keep ticking while you browse your power-ups. Manage your items carefully mid-combat.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>Is it free?</summary>
-                    <p>Yes. PuRlO is free and open source. Download the Windows build or compile from source with CMake and SFML 2.6.</p>
-                </details>
-                <details class="faq-item">
-                    <summary>How was this made?</summary>
-                    <p>C++17 with SFML 2.6 for rendering, input, and audio. CMake for builds. No game engine — procedural generation, enemy AI, camera systems, dialogue engine, and collision resolution are all custom.</p>
-                </details>
             </div>
-        </div>
-    </section>
 
-    <!-- SOCIAL -->
-    <section class="section">
-        <div class="container">
-            <div class="social-bar">
-                <a href="https://github.com/NullSec8" class="social-link" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener">Twitter / X</a>
-                <a href="https://discord.com" class="social-link" target="_blank" rel="noopener">Discord</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FOOTER -->
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
     <footer class="footer">
+
         <div class="container footer-inner">
-            <p>PuRlO &copy; 2026. Made with C++, SFML, and good vibes.</p>
-            <p class="footer-credit">Stay chill. Collect plants. Dash responsibly.</p>
+
+            <div>
+
+                <p>
+                    PuRlO © 2026
+                </p>
+
+                <p>
+                    Made with C++, SFML, questionable decisions,
+                    and good vibes.
+                </p>
+
+            </div>
+
+            <p class="footer-credit">
+                Stay chill. Collect plants. Dash responsibly. 🦆
+            </p>
+
         </div>
+
     </footer>
 
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
     <script>
-        // Mobile nav toggle
-        var navToggle = document.getElementById('navToggle');
-        var navLinks = document.getElementById('navLinks');
-        navToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('open');
+
+        /*
+         * Mobile navigation
+         */
+
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        const nav = document.getElementById('nav');
+
+        navToggle.addEventListener('click', function () {
+
+            const isOpen = navLinks.classList.toggle('open');
+
             navToggle.classList.toggle('active');
+
+            navToggle.setAttribute(
+                'aria-expanded',
+                isOpen ? 'true' : 'false'
+            );
+
+            navToggle.setAttribute(
+                'aria-label',
+                isOpen
+                    ? 'Close navigation menu'
+                    : 'Open navigation menu'
+            );
+
         });
-        navLinks.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', function() {
+
+
+        /*
+         * Close mobile navigation after clicking a link
+         */
+
+        navLinks.querySelectorAll('a').forEach(function (link) {
+
+            link.addEventListener('click', function () {
+
                 navLinks.classList.remove('open');
                 navToggle.classList.remove('active');
+
+                navToggle.setAttribute(
+                    'aria-expanded',
+                    'false'
+                );
+
+                navToggle.setAttribute(
+                    'aria-label',
+                    'Open navigation menu'
+                );
+
             });
+
         });
 
-        // Smooth scroll for nav links
-        document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                var href = this.getAttribute('href');
-                if (href.length > 1) {
-                    e.preventDefault();
-                    var target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        /*
+         * Smooth scrolling
+         */
+
+        document
+            .querySelectorAll('a[href^="#"]')
+            .forEach(function (link) {
+
+                link.addEventListener('click', function (event) {
+
+                    const href = this.getAttribute('href');
+
+                    if (!href || href === '#') {
+                        return;
                     }
-                }
-            });
-        });
 
-        // Scroll fade-in animation
-        var fadeEls = document.querySelectorAll('.fade-in');
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        fadeEls.forEach(function(el) { observer.observe(el); });
+                    const target = document.querySelector(href);
 
-        // Sticky nav shadow on scroll
-        window.addEventListener('scroll', function() {
-            document.getElementById('nav').classList.toggle('nav-scrolled', window.scrollY > 10);
-        });
+                    if (target) {
+
+                        event.preventDefault();
+
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+
+                    }
+
+                });
+
+            });
+
+
+        /*
+         * Scroll reveal animations
+         */
+
+        const fadeElements =
+            document.querySelectorAll('.fade-in');
+
+        if ('IntersectionObserver' in window) {
+
+            const observer =
+                new IntersectionObserver(
+                    function (entries) {
+
+                        entries.forEach(function (entry) {
+
+                            if (entry.isIntersecting) {
+
+                                entry.target.classList.add('visible');
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        });
+
+                    },
+                    {
+                        threshold: 0.12
+                    }
+                );
+
+            fadeElements.forEach(function (element) {
+                observer.observe(element);
+            });
+
+        } else {
+
+            fadeElements.forEach(function (element) {
+                element.classList.add('visible');
+            });
+
+        }
+
+
+        /*
+         * Navigation shadow
+         */
+
+        function updateNavigation() {
+
+            nav.classList.toggle(
+                'nav-scrolled',
+                window.scrollY > 20
+            );
+
+        }
+
+        window.addEventListener(
+            'scroll',
+            updateNavigation,
+            { passive: true }
+        );
+
+        updateNavigation();
+
     </script>
 
 </body>
