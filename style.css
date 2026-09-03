@@ -391,49 +391,6 @@ a:hover { color: var(--lime-b); }
 .world-label span { font-size: 16px; font-weight: 600; color: var(--cream); }
 .world-card p { font-size: 13px; color: var(--muted); padding: 4px 20px 20px; line-height: 1.6; }
 
-/* ENEMIES */
-.enemy-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-.enemy-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 24px 20px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    transition: transform .3s, border-color .3s;
-}
-.enemy-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(155,229,100,.3);
-}
-.enemy-img {
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 16px;
-}
-.enemy-img img { height: 80px; image-rendering: pixelated; }
-.enemy-img-brute { filter: sepia(0.4) saturate(6) hue-rotate(60deg); opacity: .85; }
-.enemy-tag {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    color: var(--purple);
-    background: rgba(142, 99, 217, 0.12);
-    border: 1px solid rgba(142, 99, 217, 0.25);
-    padding: 4px 10px;
-    border-radius: 100px;
-    margin-bottom: 12px;
-}
-.enemy-card h3 { font-size: 16px; color: var(--lime); margin-bottom: 6px; }
-.enemy-card p { font-size: 13px; color: var(--muted); }
-
 /* MECHANICS */
 .mech-grid {
     display: grid;
@@ -576,13 +533,13 @@ a:hover { color: var(--lime-b); }
 /* FADE IN */
 .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
-.cards-grid .fade-in:nth-child(2), .enemy-grid .fade-in:nth-child(2), .mech-grid .fade-in:nth-child(2), .worlds-grid .fade-in:nth-child(2) { transition-delay: .08s; }
-.cards-grid .fade-in:nth-child(3), .enemy-grid .fade-in:nth-child(3), .mech-grid .fade-in:nth-child(3), .worlds-grid .fade-in:nth-child(3) { transition-delay: .16s; }
-.cards-grid .fade-in:nth-child(4), .enemy-grid .fade-in:nth-child(4), .mech-grid .fade-in:nth-child(4), .worlds-grid .fade-in:nth-child(4) { transition-delay: .24s; }
+.cards-grid .fade-in:nth-child(2), .mech-grid .fade-in:nth-child(2), .worlds-grid .fade-in:nth-child(2) { transition-delay: .08s; }
+.cards-grid .fade-in:nth-child(3), .mech-grid .fade-in:nth-child(3), .worlds-grid .fade-in:nth-child(3) { transition-delay: .16s; }
+.cards-grid .fade-in:nth-child(4), .mech-grid .fade-in:nth-child(4), .worlds-grid .fade-in:nth-child(4) { transition-delay: .24s; }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-    .cards-grid, .enemy-grid, .mech-grid { grid-template-columns: repeat(2, 1fr); }
+    .cards-grid, .mech-grid { grid-template-columns: repeat(2, 1fr); }
     .worlds-grid { grid-template-columns: 1fr; }
     .tech-layout { grid-template-columns: 1fr; }
 }
@@ -618,7 +575,7 @@ a:hover { color: var(--lime-b); }
     .hero-desc { max-width: 100%; }
     .hero-stats { justify-content: center; }
     .hero-buttons { justify-content: center; }
-    .cards-grid, .enemy-grid, .mech-grid { grid-template-columns: 1fr; }
+    .cards-grid, .mech-grid { grid-template-columns: 1fr; }
     .download-buttons { flex-direction: column; align-items: center; }
     .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
     .social-row { flex-direction: column; align-items: center; }
