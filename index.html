@@ -41,10 +41,6 @@
     <main>
 
         <section class="hero">
-            <div class="hero-bg">
-                <img src="assets/tiles/tileset.png" alt="" class="hero-bg-img">
-            </div>
-            <div class="hero-overlay"></div>
             <div class="hero-inner">
                 <div class="hero-text">
                     <span class="hero-badge">FREE INDIE PLATFORMER</span>
@@ -54,7 +50,7 @@
                     <div class="hero-stats">
                         <div class="stat"><strong>24</strong><span>Plants</span></div>
                         <div class="stat"><strong>3</strong><span>Worlds</span></div>
-                        <div class="stat"><strong>4</strong><span>Enemy Types</span></div>
+                        <div class="stat"><strong>5</strong><span>Enemy Types</span></div>
                         <div class="stat"><strong>6257</strong><span>Lines of Code</span></div>
                     </div>
                     <div class="hero-buttons">
@@ -77,20 +73,20 @@
                     <p>It is not a very complicated job.</p>
                 </div>
                 <div class="cards-grid">
-                    <div class="card">
+                    <div class="card fade-in">
                         <img src="assets/tiles/weed_plant.png" alt="Plant" class="card-icon">
                         <h3>Find the stash</h3>
                         <p>24 plants scattered across three dangerous worlds. Eight per world. A golden arrow points you toward the nearest one when you get lost.</p>
                     </div>
-                    <div class="card">
+                    <div class="card fade-in">
                         <img src="assets/ui/pickup_ghost.png" alt="Ghost shield" class="card-icon">
                         <h3>Become fog</h3>
                         <p>Collect the right power-up and become a translucent cloud. Phase through walls. Ignore water. Temporarily ignore reality.</p>
                     </div>
-                    <div class="card">
+                    <div class="card fade-in">
                         <img src="assets/sprites/Duck/Sprites/Jumping/Jumping 001.png" alt="Duck jumping" class="card-icon">
-                        <h3>Be a duck</h3>
-                        <p>You have a hop, a sprint, and a dash that launches you at 900 units per second. No sword. No gun. Just duck.</p>
+                        <h3>Play as a duck</h3>
+                        <p>A hop, a sprint, and a dash that launches you at 900 units per second. No sword. No gun. Just duck.</p>
                     </div>
                 </div>
             </div>
@@ -120,19 +116,20 @@
                     <p>Procedurally generated terrain with their own music, enemies, and general nonsense.</p>
                 </div>
                 <div class="worlds-grid">
-                    <div class="world-main">
-                        <img src="assets/tiles/tileset.png" alt="Grasslands" loading="lazy">
+                    <div class="world-card fade-in">
+                        <div class="world-swatch" style="--tex:url('assets/tiles/tileset.png')"></div>
                         <div class="world-label"><strong>WORLD 01</strong><span>Grasslands</span></div>
+                        <p>Greens, dirt, water, and the occasional bush that does not care about you.</p>
                     </div>
-                    <div class="world-side">
-                        <div class="world-thumb">
-                            <img src="assets/tiles/desert_tileset.png" alt="Desert" loading="lazy">
-                            <div class="world-label"><strong>WORLD 02</strong><span>Desert</span></div>
-                        </div>
-                        <div class="world-thumb">
-                            <img src="assets/tiles/cave_tileset.png" alt="Cave" loading="lazy">
-                            <div class="world-label"><strong>WORLD 03</strong><span>Cave</span></div>
-                        </div>
+                    <div class="world-card fade-in">
+                        <div class="world-swatch" style="--tex:url('assets/tiles/desert_tileset.png')"></div>
+                        <div class="world-label"><strong>WORLD 02</strong><span>Desert</span></div>
+                        <p>Sand, cactus, and heat that makes your fog form feel homesick.</p>
+                    </div>
+                    <div class="world-card fade-in">
+                        <div class="world-swatch" style="--tex:url('assets/tiles/cave_tileset.png')"></div>
+                        <div class="world-label"><strong>WORLD 03</strong><span>Cave</span></div>
+                        <p>Dark, damp, and full of things that have never seen a duck and are not thrilled to.</p>
                     </div>
                 </div>
             </div>
@@ -146,29 +143,29 @@
                     <p>Four enemy types with distinct AI. Same general dislike of ducks.</p>
                 </div>
                 <div class="enemy-grid">
-                    <div class="enemy-card">
+                    <div class="enemy-card fade-in">
                         <div class="enemy-img"><img src="assets/sprites/skeleton/skeleton_sheet.png" alt="Skeleton" loading="lazy"></div>
                         <span class="enemy-tag">MELEE</span>
                         <h3>Skeleton</h3>
                         <p>Relentless pursuer. Chases, flanks, attacks, retreats. One dash will do the job.</p>
                     </div>
-                    <div class="enemy-card">
+                    <div class="enemy-card fade-in">
                         <div class="enemy-img"><img src="assets/sprites/bat/bat_sheet.png" alt="Bat" loading="lazy"></div>
                         <span class="enemy-tag">FLYING</span>
                         <h3>Bat</h3>
                         <p>Fast, annoying, and completely uninterested in your relationship with walls.</p>
                     </div>
-                    <div class="enemy-card">
+                    <div class="enemy-card fade-in">
                         <div class="enemy-img"><img src="assets/sprites/slime/slime.png" alt="Slime" loading="lazy"></div>
                         <span class="enemy-tag">RANGED</span>
                         <h3>Slime</h3>
                         <p>Sits there. Watches you. Throws slime balls. Honestly kind of disrespectful.</p>
                     </div>
-                    <div class="enemy-card">
-                        <div class="enemy-img"><img src="assets/sprites/skeleton/skeleton_sheet.png" alt="Brute" loading="lazy"></div>
+                    <div class="enemy-card fade-in">
+                        <div class="enemy-img"><img src="assets/sprites/skeleton/skeleton_sheet.png" alt="Brute" class="enemy-img-brute" loading="lazy"></div>
                         <span class="enemy-tag">BRUTE</span>
                         <h3>Brute</h3>
-                        <p>Tougher, slower, always exactly where you do not want him to be. Drops a heart.</p>
+                        <p>A hollow re-skin of the skeleton, recolored purple and bumping around with three times the health. Drops a heart.</p>
                     </div>
                 </div>
             </div>
@@ -178,26 +175,26 @@
             <div class="container">
                 <div class="section-head">
                     <span class="eyebrow">MECHANICS</span>
-                    <h2>Hands. Dash. Hop.</h2>
-                    <p>The Stoner was not generous with your equipment.</p>
+                    <h2>Hop. Dash. Get weird.</h2>
+                    <p>A small toolkit, but it is (mostly) enough.</p>
                 </div>
                 <div class="mech-grid">
-                    <div class="mech-card">
+                    <div class="mech-card fade-in">
                         <span class="mech-num">01</span>
                         <h3>Dash</h3>
                         <p>Launch yourself at 900 u/s. Invulnerable while dashing. Enemies get absolutely bonked.</p>
                     </div>
-                    <div class="mech-card">
+                    <div class="mech-card fade-in">
                         <span class="mech-num">02</span>
                         <h3>Hop</h3>
                         <p>Cross water and escape situations you probably should not have gotten yourself into.</p>
                     </div>
-                    <div class="mech-card">
+                    <div class="mech-card fade-in">
                         <span class="mech-num">03</span>
                         <h3>Fog Form</h3>
                         <p>Become mist. Ignore walls. Ignore water. Ignore damage. Temporarily ignore reality.</p>
                     </div>
-                    <div class="mech-card">
+                    <div class="mech-card fade-in">
                         <span class="mech-num">04</span>
                         <h3>Collect</h3>
                         <p>Find eight plants in each world. Bring them back before the skeletons ruin your afternoon.</p>
@@ -320,25 +317,24 @@
     <script>
         var navToggle = document.getElementById('navToggle');
         var navLinks = document.getElementById('navLinks');
+        function closeMenu() {
+            navLinks.classList.remove('open');
+            navToggle.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
         navToggle.addEventListener('click', function() {
             navLinks.classList.toggle('open');
             navToggle.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
         });
         navLinks.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', function() {
-                navLinks.classList.remove('open');
-                navToggle.classList.remove('active');
-            });
+            link.addEventListener('click', closeMenu);
         });
-        document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                var href = this.getAttribute('href');
-                if (href.length > 1) {
-                    e.preventDefault();
-                    var target = document.querySelector(href);
-                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) closeMenu();
+        });
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) closeMenu();
         });
         var fadeEls = document.querySelectorAll('.fade-in');
         if ('IntersectionObserver' in window) {
