@@ -8,7 +8,7 @@
     <meta name="theme-color" content="#07140b">
     <link rel="icon" href="assets/sprites/Duck/Sprites/Idle/Idle 001.png" type="image/png">
     <meta property="og:title" content="PuRlO — A Chill Quest for 24 Plants">
-    <meta property="og:description" content="One duck. 24 plants. Three strange worlds. No weapons. Just vibes.">
+    <meta property="og:description" content="One duck. 24 plants. Three strange worlds. One shotgun. Just vibes.">
     <meta property="og:image" content="assets/sprites/Duck/Sprites/Idle/Idle 001.png">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,13 +44,13 @@
                 <div class="hero-text">
                     <span class="hero-badge">FREE INDIE PLATFORMER</span>
                     <h1>PuRlO</h1>
-                    <p class="hero-tagline">One duck. 24 plants. Zero weapons.</p>
+                    <p class="hero-tagline">One duck. 24 plants. One shotgun.</p>
                     <p class="hero-desc">A platformer about a brave duck, a questionable stash, and three worlds full of things that do not want you collecting it.</p>
                     <div class="hero-stats">
                         <div class="stat"><strong>24</strong><span>Plants</span></div>
                         <div class="stat"><strong>3</strong><span>Worlds</span></div>
                         <div class="stat"><strong>5</strong><span>Enemy Types</span></div>
-                        <div class="stat"><strong>6257</strong><span>Lines of Code</span></div>
+                        <div class="stat"><strong>9544</strong><span>Lines of Code</span></div>
                     </div>
                     <div class="hero-buttons">
                         <a href="#download" class="btn btn-primary">Download for Windows</a>
@@ -85,7 +85,7 @@
                     <div class="card fade-in">
                         <img src="assets/sprites/Duck/Sprites/Jumping/Jumping 001.png" alt="Duck jumping" class="card-icon">
                         <h3>Play as a duck</h3>
-                        <p>A hop, a sprint, and a dash that launches you at 900 units per second. No sword. No gun. Just duck.</p>
+                        <p>A hop, a sprint, and a dash that launches you at 900 units per second. Plus a shotgun the stoner hands you. A gun. On a duck.</p>
                     </div>
                 </div>
             </div>
@@ -179,15 +179,22 @@
                         <p>Procedural tilemap generation, steering-based enemy AI with orbital flanking, smooth camera follow, dual-sine screen shake, and a full dialogue engine with typewriter text are all written specifically for the game.</p>
                         <p>Worlds are generated using seeded RNG, cluster-based terrain placement, random-walk path carving, and flood-fill reachability checks to make sure every collectible can actually be reached.</p>
                         <p>Collision uses iterative least-penetration resolution with per-axis sliding. Enemies separate to avoid stacking, recover after knockback, and perform line-of-sight checks before melee attacks.</p>
+                        <p>Enemy separation and collision used to be naive all-pairs scans — O(n squared), twice per frame, across up to ~60 enemies. That meant thousands of pair-distance checks with nothing between them but a loop and hope. Now a uniform spatial hash buckets every enemy into a 128px grid each frame, so each one only inspects its immediate 3x3 neighborhood. Same behavior, per-frame cost drops from quadratic to "basically friends only".</p>
+                        <p>The dialogue engine is a hand-rolled word-wrap machine. Because SFML is immediate-mode and won't measure text for you, every show rebuilds a wrapped buffer by allocating a throwaway sf::Text per token to measure widths, then renders a typewriter reveal off that buffer. Ugly, honest, and it works.</p>
+                        <p>Setting up the window is genuinely cursed. SFML needs a video mode and style before the Game object's members exist, so the fullscreen flag can't be read during construction without invoking undefined behavior. A function-local static resolves both values from the same settings file — once — before any member init touches them. There is a comment in the code apologizing for it at 4am.</p>
+                        <p>Enemies that get shoved into a wall by separation are walked back out by brute force: try every direction, smallest step first, until one doesn't overlap solid. One step per frame, only when actually embedded, so it can't tunnel through a thin wall. It is not a navmesh. It is, however, load-bearing silliness.</p>
+                        <p>Settings live in a plain ini-style file read straight into the sound system before the window opens — resolution, volume, fullscreen. The menu writes globals, the game polls the globals every frame and recreates the window when they change. No callbacks, no events. Globals and vibes.</p>
+                        <p>The in-game world also ships with a sibling desktop app: a Hammer-style level editor that paints tiles, places decorations and enemy spawns, and exports a compact binary .purlo map file the game loads back verbatim. It has a 100-step undo that survives palette changes, biome switches, and even resizes, a live minimap, and a validate panel that flood-fills to check every collectible is reachable before you press Play.</p>
                     </div>
                     <div class="tech-sidebar">
                         <div class="tech-item"><h4>Language</h4><p>C++17</p></div>
                         <div class="tech-item"><h4>Framework</h4><p>SFML 2.6</p></div>
                         <div class="tech-item"><h4>Build</h4><p>CMake</p></div>
                         <div class="tech-item"><h4>Resolution</h4><p>1280x720 to 1440p</p></div>
-                        <div class="tech-item"><h4>World Size</h4><p>2000x2000 px</p></div>
-                        <div class="tech-item"><h4>Source</h4><p>32 files, ~6257 lines</p></div>
+                        <div class="tech-item"><h4>World Size</h4><p>2800x2800 px</p></div>
+                        <div class="tech-item"><h4>Source</h4><p>44 files, ~9544 lines</p></div>
                         <div class="tech-item"><h4>Assets</h4><p>Kenney packs, CC0</p></div>
+                        <div class="tech-item"><h4>Map Editor</h4><p>Built-in, .purlo maps</p></div>
                     </div>
                 </div>
             </div>
@@ -224,7 +231,7 @@
                 <div class="faq-list">
                     <details class="faq-item">
                         <summary>What are the controls?</summary>
-                        <p>WASD to move. Space to hop. Shift to sprint. K or Left Ctrl to dash. E to talk/interact. I to open inventory. Escape to close menu. R to restart after death.</p>
+                        <p>WASD to move. Space to hop. Shift to sprint. K to dash. Left Ctrl to crouch (dodges slime balls). F to fire the shotgun. E to talk/interact. I to open inventory. Escape to close menu. R to restart after death.</p>
                     </details>
                     <details class="faq-item">
                         <summary>How does the dash work?</summary>
@@ -232,7 +239,7 @@
                     </details>
                     <details class="faq-item">
                         <summary>How many worlds are there?</summary>
-                        <p>Three: Grasslands, Desert, and Cave. Each world is 2000x2000 pixels and procedurally generated using seeded RNG. Eight plants to collect in each.</p>
+                        <p>Three: Grasslands, Desert, and Cave. Each world is 2800x2800 pixels and procedurally generated using seeded RNG. Eight plants to collect in each.</p>
                     </details>
                     <details class="faq-item">
                         <summary>What power-ups can I find?</summary>

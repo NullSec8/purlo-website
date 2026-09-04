@@ -115,17 +115,6 @@ a:hover { color: var(--lime-b); }
         radial-gradient(50% 50% at 20% 20%, rgba(155,229,100,.08), transparent 70%),
         linear-gradient(180deg, var(--g900) 0%, var(--g950) 100%);
 }
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(155,229,100,.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(155,229,100,.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-    mask-image: radial-gradient(70% 60% at 50% 40%, #000 0%, transparent 100%);
-    pointer-events: none;
-}
 .hero-inner {
     position: relative;
     display: flex;
