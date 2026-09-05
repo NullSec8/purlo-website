@@ -366,7 +366,7 @@ a:hover { color: var(--lime-b); }
 .world-swatch {
     height: 150px;
     background: var(--g800) var(--tex) repeat;
-    background-size: 32px 32px;
+    background-size: 64px 64px;
     image-rendering: pixelated;
     border-bottom: 1px solid var(--border);
 }
